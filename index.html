@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osprey Racing | Formula SAE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="top">
+        <a class="corner-logo-link" href="#top" onclick="showTab('home')" aria-label="Go to Home">
+            <img class="corner-logo" src="OR.png" alt="Osprey Racing logo">
+        </a>
+        <button class="information-menu-toggle" type="button" aria-label="Open information menu" aria-expanded="false" aria-controls="information-menu" onclick="toggleInformationMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <aside class="information-menu" id="information-menu" aria-labelledby="information-menu-title" hidden>
+        <h2 id="information-menu-title">Information</h2>
+        <button id="information-menu-support" type="button" aria-haspopup="dialog" aria-controls="support-dialog">Support Us</button>
+        <a href="https://www.fsaeonline.com/" target="_blank" rel="noopener noreferrer">FSAE Online</a>
+        <a href="https://www.fsaeonline.com/cdsweb/gen/documentresources.aspx" target="_blank" rel="noopener noreferrer">Series Resources</a>
+        <a href="https://www.unf.edu/" target="_blank" rel="noopener noreferrer">University Website</a>
+        <a href="https://unf.campusgroups.com/feeds?type=club&amp;type_id=35642&amp;tab=about" target="_blank" rel="noopener noreferrer">Perch Portal</a>
+    </aside>
+
+    <nav class="tab-bar">
+        <button class="tab-btn active" data-tab="home" onclick="showTab('home')">Home</button>
+        <button class="tab-btn" data-tab="about" onclick="showTab('about')">About Us</button>
+        <button class="tab-btn" data-tab="media" onclick="showTab('media')">Media Gallery</button>
+        <button class="tab-btn" data-tab="wheel" onclick="showTab('wheel')">3D Models</button>
+        <button class="tab-btn" data-tab="legacy" onclick="showTab('legacy')">Legacy</button>
+    </nav>
+
+    <!-- TAB 1: Home -->
+    <div id="tab-home" class="tab-panel active">
+        <section class="hero">
+            <video
+                class="hero-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                aria-hidden="true"
+                preload="metadata">
+                <source src="homescreen1.mp4" type="video/mp4">
+            </video>
+            <div class="hero-shade" aria-hidden="true"></div>
+            <div class="hero-brand">
+                <img src="ORlogo-high-resolution.png" alt="Osprey Racing">
+                <p class="team-subtitle">Formula SAE Team</p>
+            </div>
+
+        </section>
+
+        <section class="brand-statement" aria-label="Osprey Racing motto">
+            <h2>Design. Build. Compete.</h2>
+        </section>
+
+        <section class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number">80</div>
+                <div>Horsepower</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">0-60</div>
+                <div>2.8 Seconds</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">Weight</div>
+                <div>498 lbs</div>
+            </div>
+        </section>
+
+        <section class="fsae-events" aria-label="Formula SAE competition events">
+            <h2 id="dynamic-events-title">Dynamic Events</h2>
+
+            <article class="event-row">
+                <img src="tech-inspection.png" alt="Osprey Racing car presented for technical inspection" loading="lazy" decoding="async">
+                <div class="event-copy">
+                    <h3>Endurance/Fuel Economy</h3>
+                    <p>Tests the overall performance of the car and its reliability. The car must drive 22 km with a mandatory driver change, and its fuel consumption is measured.</p>
+                    <h3 style="margin-top: 25px;">Skid Pad</h3>
+                    <p>Measures the car’s cornering ability while making a constant-radius turn. Drivers make laps around a small figure-eight course.</p>
+                </div>
+            </article>
+
+            <article class="event-row reverse">
+                <img src="autocross.png" alt="Formula SAE car navigating a cone-marked autocross course" loading="lazy" decoding="async">
+                <div class="event-copy">
+                    <h3>Acceleration</h3>
+                    <p>Cars accelerate over a distance of 75 m on a flat surface.</p>
+                    <h3 style="margin-top: 25px;">Autocross</h3>
+                    <p>Evaluates the car’s maneuverability and handling qualities on a tight course without competing cars. The course combines acceleration, braking, and cornering.</p>
+                </div>
+            </article>
+
+            <h2 class="static-events-heading" id="static-events-title">Static Events</h2>
+
+            <article class="event-row">
+                <img src="endurance.png" alt="Osprey Racing car competing on track" loading="lazy" decoding="async">
+                <div class="event-copy">
+                    <h3>Business Presentation</h3>
+                    <p>Evaluates the team’s ability to develop and deliver a comprehensive business plan. The car must be profitably manufactured, marketed, and meet the demands of the racing market.</p>
+                    <h3 style="margin-top: 25px;">Engineering Design</h3>
+                    <p>Judges the effort that went into the car’s design. The car that best uses engineering to meet its design goals will win the design event.</p>
+                    <h3 style="margin-top: 25px;">Cost Analysis</h3>
+                    <p>Cost and budget are significant factors. Teams must make decisions between cost and benefit, and create and maintain a Bill of Material.</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="computer-to-track" aria-labelledby="computer-to-track-title">
+            <div class="computer-to-track-inner">
+                <p class="computer-to-track-eyebrow">How a car gets made</p>
+                <h2 id="computer-to-track-title">Computer to Track</h2>
+                <div class="process-tabs">
+                    <button class="process-tab process-tab-design" type="button" data-process="design">
+                        <img class="process-tab-image" src="process-design.png" alt="" loading="lazy" decoding="async">
+                        <span class="process-tab-title">Design</span>
+                    </button>
+                    <button class="process-tab process-tab-build" type="button" data-process="build">
+                        <img class="process-tab-image" src="process-build.png" alt="" loading="lazy" decoding="async">
+                        <span class="process-tab-title">Building</span>
+                    </button>
+                    <button class="process-tab process-tab-test" type="button" data-process="test">
+                        <img class="process-tab-image" src="process-test.png" alt="" loading="lazy" decoding="async">
+                        <span class="process-tab-title">Testing</span>
+                    </button>
+                    <button class="process-tab process-tab-compete" type="button" data-process="competition">
+                        <img class="process-tab-image" src="process-comp.png" alt="" loading="lazy" decoding="async">
+                        <span class="process-tab-title">Competition</span>
+                    </button>
+                </div>
+                <button class="support-us-card" id="support-us-button" type="button" aria-haspopup="dialog" aria-controls="support-dialog">Support Us</button>
+            </div>
+            <dialog class="process-dialog" id="support-dialog" aria-labelledby="support-dialog-title">
+                <div class="process-dialog-header">
+                    <h2 id="support-dialog-title">Support Osprey Racing</h2>
+                    <button class="process-dialog-close" type="button" aria-label="Close support details">&times;</button>
+                </div>
+                <img class="support-dialog-image" src="support-us-team.png" alt="Osprey Racing team gathered around their Formula SAE car" loading="lazy" decoding="async">
+                <div class="support-dialog-copy">
+                    <p class="support-dialog-lead">By supporting Osprey Racing, your contribution directly funds:</p>
+                    <ul>
+                        <li><strong>Advanced Materials &amp; Cutting-Edge Components:</strong> Purchasing high-performance parts, composites, and precision hardware needed to build the race car.</li>
+                        <li><strong>Manufacturing &amp; Fabrication:</strong> Covering costs for specialized machining, prototyping, and raw materials to turn student designs into physical reality.</li>
+                        <li><strong>Team Operations &amp; Competition:</strong> Funding essential equipment, testing, and logistics so the team can bring their car to life and compete.</li>
+                    </ul>
+                </div>
+                <a class="support-dialog-donate" href="https://gift.unf.edu/campaign/788578/donate" target="_blank" rel="noopener noreferrer">Donate to Osprey Racing</a>
+                <p class="support-dialog-guidance">Under “I’d like to support,” click <strong>CCEC</strong>, then click <strong>Osprey Racing</strong>.</p>
+            </dialog>
+            <dialog class="process-dialog" id="process-dialog" aria-labelledby="process-dialog-title">
+                <div class="process-dialog-header">
+                    <h2 id="process-dialog-title"></h2>
+                    <button class="process-dialog-close" type="button" aria-label="Close process details">&times;</button>
+                </div>
+                <div class="process-carousel" id="process-carousel">
+                    <button class="process-carousel-arrow process-carousel-previous" type="button" aria-label="Previous photo">&lsaquo;</button>
+                    <div class="process-carousel-track" id="process-carousel-track" aria-label="Process photos"></div>
+                    <button class="process-carousel-arrow process-carousel-next" type="button" aria-label="Next photo">&rsaquo;</button>
+                    <div class="process-carousel-dots" id="process-carousel-dots" aria-label="Choose a photo"></div>
+                </div>
+                <div class="process-dialog-copy" id="process-dialog-copy"></div>
+            </dialog>
+        </section>
+
+        <section class="car-catalog" aria-labelledby="car-catalog-title">
+            <div class="car-catalog-inner">
+                <h2 id="car-catalog-title">Osprey Racing Cars</h2>
+                <div class="car-grid" id="car-grid" aria-label="Car model generations"></div>
+                <section class="car-detail" id="car-detail" aria-live="polite" hidden>
+                    <button class="car-detail-back" id="car-detail-back" type="button">← Back to all cars</button>
+                    <h3 id="car-detail-title"></h3>
+                    <div class="car-detail-content" id="car-detail-content" hidden>
+                        <div class="car-detail-gallery" id="car-detail-gallery"></div>
+                        <h4 class="car-results-heading" id="car-results-heading" hidden></h4>
+                        <p class="car-detail-note" id="car-detail-note" hidden></p>
+                        <div class="car-specs" id="car-specs"></div>
+                        <p class="car-detail-footnote" id="car-detail-footnote" hidden></p>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </div>
+
+    <!-- TAB 2: About Us -->
+    <div id="tab-about" class="tab-panel">
+        <div class="about-team-background">
+            <section class="about-section">
+                <div class="about-content">
+                    <h2>About Osprey Racing</h2>
+                    <p>Osprey Racing is a non-profit Society of Automotive Engineers (SAE) at the University of North Florida dedicated to designing, building, and racing a formula-style racecar annually.</p>
+                    <p>Founded in January 2010, the program has grown into one of the most recognized and respected organizations on campus, relying entirely on community sponsors for financial, material, and technical resources.</p>
+                    <p>Building upon a rich history of hands-on engineering excellence highlighted by the record-breaking Swoop D12 at the 2024 Michigan competition and two trophies at the Daytona International Speedway SCCA autocross, Osprey Racing continues to push the boundaries of student-built high-performance motorsport.</p>
+                </div>
+            </section>
+            <section class="season-team" aria-label="D15 team">
+                <div class="season-team-banner">
+                    <img src="d15-team.png" alt="Osprey Racing student team members posing together in the workshop" loading="lazy" decoding="async">
+                </div>
+            </section>
+            <section class="leads-section" aria-labelledby="leads-title">
+                <h2 id="leads-title">Team Leads</h2>
+                <div class="leads-grid">
+                <a class="lead-card" href="https://www.linkedin.com/in/alexander-skigen-5377a137b/" target="_blank" rel="noopener noreferrer" aria-label="Captain Alex Skigen. Open LinkedIn profile">
+                    <img class="lead-card-image" src="alex-skigen.png" alt="Captain Alex Skigen in the Osprey Racing workshop" loading="lazy" decoding="async">
+                    <span class="lead-card-shade" aria-hidden="true"></span>
+                    <span class="lead-card-content">
+                        <span class="lead-card-role">Captain</span>
+                        <span class="lead-card-name">Alex Skigen</span>
+                        <span class="lead-card-degree">Advanced Manufacturing Engineering</span>
+                        <span class="lead-card-bio">Joining the team in 2023 as a freshman at UNF, Alex has previously served as the team’s Ergonomics, Safety lead, and President. In 2026, he accepted the Captain position and serves to drive innovation. While he is not in the shop, you’ll most likely find him walking his corgi, Calan.</span>
+                        <span class="lead-link-label">LinkedIn</span>
+                    </span>
+                </a>
+                <a class="lead-card" href="https://www.linkedin.com/in/jackson-shirey-256a35335" target="_blank" rel="noopener noreferrer" aria-label="President Jackson Shirey. Open LinkedIn profile">
+                    <img class="lead-card-image" src="jackson-shirey.png" alt="President Jackson Shirey in the Osprey Racing workshop" loading="lazy" decoding="async">
+                    <span class="lead-card-shade" aria-hidden="true"></span>
+                    <span class="lead-card-content">
+                        <span class="lead-card-role">President</span>
+                        <span class="lead-card-name">Jackson Shirey</span>
+                        <span class="lead-card-degree">Business Administration</span>
+                        <span class="lead-card-bio">Jackson first joined the team in 2024, became team treasurer in 2025, and is now the president for the 2026–2027 season. He oversees club-school relations and management. In his off time, he’s trying to keep up with his friends on the disc golf course.</span>
+                        <span class="lead-link-label">LinkedIn</span>
+                    </span>
+                </a>
+                <a class="lead-card" href="https://www.linkedin.com/in/madison-winemiller/" target="_blank" rel="noopener noreferrer" aria-label="Treasurer Madison Winemiller. Open LinkedIn profile">
+                    <img class="lead-card-image madison-photo" src="madison-winemiller.png" alt="Treasurer Madison Winemiller in the Osprey Racing workshop" loading="lazy" decoding="async">
+                    <span class="lead-card-shade" aria-hidden="true"></span>
+                    <span class="lead-card-content">
+                        <span class="lead-card-role">Treasurer</span>
+                        <span class="lead-card-name">Madison Winemiller</span>
+                        <span class="lead-card-degree">Mechanical Engineering</span>
+                        <span class="lead-card-bio">Madison joined the team in 2025 as a freshman, contributing to each system in her sophomore year. She assumed the position of Treasurer in 2026, overseeing the team’s accounts. When she isn’t in the shop, you can find her looking for the next opportunity to help others or exploring the area.</span>
+                        <span class="lead-link-label">LinkedIn</span>
+                    </span>
+                </a>
+                <article class="lead-card lead-placeholder">
+                    <img class="lead-card-image tyler-photo" src="tyler-hall.png" alt="Powertrain lead Tyler Hall in the Osprey Racing workshop" loading="lazy" decoding="async">
+                    <span class="lead-card-shade" aria-hidden="true"></span>
+                    <div class="lead-card-content">
+                        <p class="lead-card-role">Powertrain</p>
+                        <h3 class="lead-card-name">Tyler Hall</h3>
+                        <p class="lead-card-degree">Mechanical Engineering</p>
+                        <p class="lead-card-bio">Tyler joined the team in 2025 as a junior at UNF and served as the electrical lead for the D15. In 2026, he accepted the position of Powertrain lead and intends to make the racecar go vroom vroom. When he’s not around, you’ll see him turning wrenches and working on his Tiburon.</p>
+                    </div>
+                </article>
+                <a class="lead-card" href="https://www.linkedin.com/in/jthomas-unf/" target="_blank" rel="noopener noreferrer" aria-label="Chassis and Vehicle Dynamics lead Jackson Thomas. Open LinkedIn profile">
+                    <img class="lead-card-image" src="jackson-thomas.png" alt="Chassis and Vehicle Dynamics lead Jackson Thomas in the Osprey Racing workshop" loading="lazy" decoding="async">
+                    <span class="lead-card-shade" aria-hidden="true"></span>
+                    <span class="lead-card-content">
+                        <span class="lead-card-role">Chassis &amp; VD</span>
+                        <span class="lead-card-name">Jackson Thomas</span>
+                        <span class="lead-card-degree">Mechanical Engineering</span>
+                        <span class="lead-card-bio">Jackson joined the team in 2022 as a freshman at UNF. In 2025, he became the Chassis and Suspension/Vehicle Dynamics Lead. This year he designed Osprey Racing’s first ever 10-inch wheel package for the Swoop D15, which marks one of the largest design changes in team history and a major transition from the 13-inch wheels every year prior.</span>
+                        <span class="lead-link-label">LinkedIn</span>
+                    </span>
+                </a>
+                <a class="lead-card" href="https://www.linkedin.com/in/amelia-snodgrass/" target="_blank" rel="noopener noreferrer" aria-label="Ergonomics lead Amelia Snodgrass. Open LinkedIn profile">
+                    <img class="lead-card-image" src="amelia-snodgrass.png" alt="Ergonomics lead Amelia Snodgrass in the Osprey Racing workshop" loading="lazy" decoding="async">
+                    <span class="lead-card-shade" aria-hidden="true"></span>
+                    <span class="lead-card-content">
+                        <span class="lead-card-role">Ergonomics</span>
+                        <span class="lead-card-name">Amelia Snodgrass</span>
+                        <span class="lead-card-degree">Mechanical Engineering</span>
+                        <span class="lead-card-bio">Amelia joined the team in 2025 and assisted in Ergonomics and Safety. In 2026, she accepted the position of Ergonomics lead and intends to improve the driver interface.</span>
+                        <span class="lead-link-label">LinkedIn</span>
+                    </span>
+                </a>
+                <a class="lead-card" href="https://www.linkedin.com/in/lorelei-church-79716334b/" target="_blank" rel="noopener noreferrer" aria-label="Electrical lead Lorelei Church. Open LinkedIn profile">
+                    <img class="lead-card-image" src="lorelei-church.png" alt="Electrical lead Lorelei Church in the Osprey Racing workshop" loading="lazy" decoding="async">
+                    <span class="lead-card-shade" aria-hidden="true"></span>
+                    <span class="lead-card-content">
+                        <span class="lead-card-role">Electrical</span>
+                        <span class="lead-card-name">Lorelei Church</span>
+                        <span class="lead-card-degree">Electrical Engineering</span>
+                        <span class="lead-card-bio">Lorelei joined the team in 2025 and assisted in designing and manufacturing the wiring harness. In 2026, she accepted the position of Electrical lead and intends to design and manufacture the wiring harness to be efficient and reliable.</span>
+                        <span class="lead-link-label">LinkedIn</span>
+                    </span>
+                </a>
+                <a class="lead-card" href="https://www.linkedin.com/in/krish-patel-608773207/" target="_blank" rel="noopener noreferrer" aria-label="Data Acquisition lead Krish Patel. Open LinkedIn profile">
+                    <img class="lead-card-image" src="krish-patel.png" alt="Data Acquisition lead Krish Patel in the Osprey Racing workshop" loading="lazy" decoding="async">
+                    <span class="lead-card-shade" aria-hidden="true"></span>
+                    <span class="lead-card-content">
+                        <span class="lead-card-role">Data Acquisition</span>
+                        <span class="lead-card-name">Krish Patel</span>
+                        <span class="lead-card-degree">Computer Science</span>
+                        <span class="lead-card-bio">Krish joined the team in 2025 and put in effort to learn as much as he could about every system. In 2026, he accepted the position of Data Acquisition Lead for the team and intends to leverage simulations and telemetry to help the team make better engineering decisions.</span>
+                        <span class="lead-link-label">LinkedIn</span>
+                    </span>
+                </a>
+                <a class="lead-card" href="https://www.linkedin.com/in/gavin-godwin-6a8b9726b/" target="_blank" rel="noopener noreferrer" aria-label="Composites lead Gavin Godwin. Open LinkedIn profile">
+                    <img class="lead-card-image" src="gavin-godwin.png" alt="Composites lead Gavin Godwin in the Osprey Racing workshop" loading="lazy" decoding="async">
+                    <span class="lead-card-shade" aria-hidden="true"></span>
+                    <span class="lead-card-content">
+                        <span class="lead-card-role">Composites</span>
+                        <span class="lead-card-name">Gavin Godwin</span>
+                        <span class="lead-card-degree">Advanced Manufacturing Engineering</span>
+                        <span class="lead-card-bio">Gavin joined the team in 2023 as a sophomore at UNF. In 2025, he assumed the Composites Lead position, infusing carbon with epoxy and experimenting with new ways of manufacturing. When he’s not in the shop, you’ll find him offshore fishing, dreaming of fishing, or playing disc golf.</span>
+                        <span class="lead-link-label">LinkedIn</span>
+                    </span>
+                </a>
+                <a class="lead-card" href="https://www.linkedin.com/in/isaac-montes/" target="_blank" rel="noopener noreferrer" aria-label="Aerodynamics lead Isaac Montes. Open LinkedIn profile">
+                    <img class="lead-card-image" src="isaac-montes.png" alt="Aerodynamics lead Isaac Montes in the Osprey Racing workshop" loading="lazy" decoding="async">
+                    <span class="lead-card-shade" aria-hidden="true"></span>
+                    <span class="lead-card-content">
+                        <span class="lead-card-role">Aerodynamics</span>
+                        <span class="lead-card-name">Isaac Montes</span>
+                        <span class="lead-card-degree">Mechanical Engineering</span>
+                        <span class="lead-card-bio">Isaac joined the team in 2025 as a junior at UNF. In 2026, he continues as the Aerodynamics Lead, testing the previous aero package and designing new parts with simulations. When he’s not in the shop, you’ll probably see him working on a rocket or in an R&amp;D lab.</span>
+                        <span class="lead-link-label">LinkedIn</span>
+                    </span>
+                </a>
+                <a class="lead-card" href="https://www.linkedin.com/in/harrison-sparaco/" target="_blank" rel="noopener noreferrer" aria-label="Public Relations officer Harrison Sparaco. Open LinkedIn profile">
+                    <img class="lead-card-image" src="harrison-sparaco.png" alt="Public Relations officer Harrison Sparaco in the Osprey Racing workshop" loading="lazy" decoding="async">
+                    <span class="lead-card-shade" aria-hidden="true"></span>
+                    <span class="lead-card-content">
+                        <span class="lead-card-role">PR</span>
+                        <span class="lead-card-name">Harrison Sparaco</span>
+                        <span class="lead-card-degree">Advertising</span>
+                        <span class="lead-card-bio">Harrison joined the team in 2023 as a freshman at UNF. In 2025, he became the team’s Public Relations officer, supporting community outreach and social media marketing. When he’s out and about, you’ll see him on track in his M2 or iRacing.</span>
+                        <span class="lead-link-label">LinkedIn</span>
+                    </span>
+                </a>
+                <button class="lead-card lead-placeholder advisor-card" id="advisor-card" type="button" aria-haspopup="dialog" aria-controls="advisor-dialog">
+                    <img class="lead-card-image" src="dr-nuszkowski-headshot.png" alt="Dr. John Nuszkowski in the Osprey Racing workshop" loading="lazy" decoding="async">
+                    <span class="lead-card-shade" aria-hidden="true"></span>
+                    <span class="lead-card-content">
+                        <span class="lead-card-role">Advisor</span>
+                        <span class="lead-card-name">Dr. John Nuszkowski</span>
+                        <span class="lead-card-degree">Mechanical Engineering</span>
+                        <span class="lead-card-bio">Dr. Nuszkowski is an Associate Professor at UNF, focusing on vehicle performance, alternative fuels, emissions reduction, combustion, and thermodynamic systems. He earned his Ph.D. and M.S. from West Virginia University and his B.S. from Rochester Institute of Technology.</span>
+                        <span class="lead-link-label">Learn more</span>
+                    </span>
+                </button>
+            </div>
+            <dialog class="advisor-dialog" id="advisor-dialog" aria-labelledby="advisor-dialog-title">
+                <div class="advisor-dialog-header">
+                    <div>
+                        <h2 id="advisor-dialog-title">Dr. John Nuszkowski</h2>
+                        <p>Advisor · Mechanical Engineering</p>
+                    </div>
+                    <button class="advisor-dialog-close" type="button" aria-label="Close advisor details">&times;</button>
+                </div>
+                <section class="advisor-dialog-panel">
+                    <h3>Areas of Expertise</h3>
+                    <ul>
+                        <li>Vehicle and engine performance</li>
+                        <li>Internal combustion engine emissions</li>
+                        <li>Combustion</li>
+                        <li>Alternative Fuels</li>
+                        <li>Thermodynamic Systems</li>
+                    </ul>
+                    <h3>Education</h3>
+                    <ul>
+                        <li>Ph.D. Mechanical Engineering, West Virginia University, Morgantown, WV, August 2008</li>
+                        <li>M.S. Mechanical Engineering, West Virginia University, Morgantown, WV, August 2005</li>
+                        <li>B.S. Mechanical Engineering, Rochester Institute of Technology, Rochester, NY, May 2003</li>
+                    </ul>
+                    <h3>Biography</h3>
+                    <p>Dr. John Nuszkowski is an Associate Professor at the University of North Florida. His research goals are the improvement of vehicle fuel economy by operating vehicles more efficiently and the improvement of air quality by reducing the exhaust emissions from engines and vehicles through improved combustion of petroleum-based fuels and use of alternative fuels. Dr. Nuszkowski’s research includes vehicle powertrain optimization, in-use vehicle emissions, advanced combustion, alternative fuels, and large bore diesel emissions reduction.</p>
+                    <a class="advisor-link" href="https://www.linkedin.com/in/john-nuszkowski/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </section>
+            </dialog>
+        </section>
+        </div>
+    </div>
+
+    <!-- TAB 3: Media Gallery -->
+    <div id="tab-media" class="tab-panel">
+        <main class="media-gallery">
+            <section class="media-hero" aria-label="Featured Osprey Racing photos" aria-roledescription="carousel">
+                <div class="media-hero-image-frame">
+                    <img class="media-hero-image" id="media-hero-image" src="gallery-a.png" alt="Osprey Racing D14 car #44 parked on campus" loading="lazy" decoding="async">
+                </div>
+                <div class="media-hero-shade" aria-hidden="true"></div>
+                <div class="media-hero-caption" aria-live="polite">
+                    <h1>GALLERY</h1>
+                    <p class="media-hero-counter" id="media-hero-counter"></p>
+                </div>
+                <button class="media-hero-arrow media-hero-previous" type="button" aria-label="Previous featured photo">&lsaquo;</button>
+                <button class="media-hero-arrow media-hero-next" type="button" aria-label="Next featured photo">&rsaquo;</button>
+            </section>
+            <section class="media-gallery-content" aria-labelledby="media-gallery-title">
+                <h2 id="media-gallery-title">Media Gallery</h2>
+                <div class="media-category-tabs" id="media-category-tabs" role="group" aria-label="Photo categories"></div>
+                <div class="media-subcategory-tabs" id="media-subcategory-tabs" role="group" aria-label="Photo subcategories"></div>
+                <div class="media-photo-grid" id="media-photo-grid" aria-live="polite"></div>
+                <div class="media-empty-state" id="media-empty-state" hidden>Add photos to this gallery section when they are ready.</div>
+            </section>
+        </main>
+    </div>
+
+    <dialog class="media-viewer-dialog" id="media-viewer" aria-label="Photo preview">
+        <div class="media-viewer-stage">
+            <img class="media-viewer-image" id="media-viewer-image" alt="" loading="lazy" decoding="async">
+        </div>
+        <button class="media-viewer-close" type="button" aria-label="Close photo preview">&times;</button>
+    </dialog>
+
+    <!-- TAB 4: 3D Models -->
+    <div id="tab-wheel" class="tab-panel">
+        <section class="wheel-section">
+            <div class="model-grid">
+                <article class="model-card">
+                    <h2>Original Wheel</h2>
+                    <p>Drag to rotate; scroll to zoom. This wheel stays in its own viewer.</p>
+                    <div class="model-viewer" id="wheel-viewer"></div>
+                    <p class="model-status">Use the mouse or trackpad to move the wheel view.</p>
+                </article>
+                <article class="model-card">
+                    <h2>Formula SAE Chassis</h2>
+                    <p>Drag to rotate; scroll to zoom. Uploading a file replaces only this model.</p>
+                    <div class="model-viewer" id="chassis-viewer"></div>
+                    <input class="model-file" id="chassis-file" type="file" accept=".glb,model/gltf-binary" aria-label="Choose a GLB file for the chassis box">
+                    <p class="model-status" id="chassis-status" aria-live="polite">Loading chassis model…</p>
+                </article>
+                <article class="model-card">
+                    <h2>Twin Turbo LS Engine</h2>
+                    <p>Drag to rotate; scroll to zoom. Upload a GLB to replace this model.</p>
+                    <div class="model-viewer" id="model-viewer-1"></div>
+                    <input class="model-file" id="model-file-1" type="file" accept=".glb,model/gltf-binary" aria-label="Choose a GLB file to replace the Twin Turbo LS Engine">
+                    <p class="model-status" id="model-status-1" aria-live="polite">Loading engine model…</p>
+                </article>
+                <article class="model-card">
+                    <h2>Additional Model 2</h2>
+                    <p>Drag to rotate; scroll to zoom. Upload a GLB to fill this box.</p>
+                    <div class="model-viewer" id="model-viewer-2"></div>
+                    <input class="model-file" id="model-file-2" type="file" accept=".glb,model/gltf-binary" aria-label="Choose a GLB file for additional model 2">
+                    <p class="model-status" id="model-status-2" aria-live="polite">Waiting for a GLB file.</p>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <!-- TAB 5: Legacy -->
+    <div id="tab-legacy" class="tab-panel">
+        <section class="legacy-section" aria-labelledby="legacy-title">
+            <div class="legacy-inner">
+                <h1 id="legacy-title">Osprey Racing Legacy</h1>
+                <p class="legacy-intro">Explore the cars and generations that have shaped Osprey Racing.</p>
+                <div class="legacy-grid" id="legacy-grid" aria-label="Osprey Racing car generations"></div>
+            </div>
+        </section>
+    </div>
+
+    <dialog class="legacy-dialog" id="legacy-dialog" aria-labelledby="legacy-dialog-title">
+        <div class="legacy-dialog-header">
+            <div>
+                <h2 id="legacy-dialog-title"></h2>
+                <p id="legacy-dialog-year"></p>
+            </div>
+            <button class="legacy-dialog-close" type="button" aria-label="Close generation details">&times;</button>
+        </div>
+        <div class="legacy-dialog-content">
+            <p class="legacy-dialog-summary" id="legacy-dialog-summary"></p>
+            <section aria-labelledby="legacy-leads-title">
+                <h3 id="legacy-leads-title">Founders and Captains</h3>
+                <div class="legacy-lead-grid" id="legacy-lead-grid"></div>
+            </section>
+            <section aria-labelledby="legacy-members-title">
+                <h3 id="legacy-members-title">Team Members</h3>
+                <div class="legacy-member-grid" id="legacy-member-grid"></div>
+            </section>
+        </div>
+    </dialog>
+
+    <nav class="social-links" aria-label="Social media and contact links">
+        <a class="social-link" href="https://www.instagram.com/osprey_racing/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+                <rect x="5.5" y="5.5" width="21" height="21" rx="6"></rect>
+                <circle cx="16" cy="16" r="5"></circle>
+                <circle cx="23" cy="9.5" r="1" fill="currentColor" stroke="none"></circle>
+            </svg>
+        </a>
+        <a class="social-link" href="https://www.tiktok.com/@ospreyracing" target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok">
+            <svg viewBox="10 3 16 24" aria-hidden="true">
+                <path d="M18 5v13.5a4.5 4.5 0 1 1-4.5-4.5"></path>
+                <path d="M18 5c.6 3.2 2.7 5.2 5.5 5.7"></path>
+            </svg>
+        </a>
+        <a class="social-link" href="https://www.youtube.com/@OspreyRacing" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+                <rect x="3.5" y="7" width="25" height="18" rx="5"></rect>
+                <path d="m13.5 12 7 4-7 4z" fill="currentColor" stroke="none"></path>
+            </svg>
+        </a>
+        <a class="social-link" href="https://www.linkedin.com/company/unf-osprey-racing/home/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M7 12h4v13H7zM9 6.5a2.3 2.3 0 1 0 0 4.6 2.3 2.3 0 0 0 0-4.6ZM15 12h3.8v1.8h.1a4.2 4.2 0 0 1 3.8-2.1c4.1 0 4.9 2.7 4.9 6.2V25h-4v-6.3c0-1.5 0-3.5-2.2-3.5s-2.5 1.7-2.5 3.4V25h-4z"></path>
+            </svg>
+        </a>
+        <a class="social-link" href="https://www.facebook.com/unfsae" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M19.5 27V17h3.6l.6-4.2h-4.2v-2.7c0-1.2.4-2 2.1-2H24V4.3c-.4-.1-1.8-.2-3.4-.2-3.4 0-5.7 2.1-5.7 5.9v2.8h-3.8V17h3.8v10"></path>
+            </svg>
+        </a>
+        <a class="social-link" href="https://docs.google.com/forms/d/e/1FAIpQLSc3qJIOHpZegzOV0lReOXOfTXfYCWvstdcNu7480uwwRLDOzA/viewform" target="_blank" rel="noopener noreferrer" aria-label="Contact Osprey Racing" title="Contact us">
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+                <rect x="3.5" y="7" width="25" height="18" rx="2.5"></rect>
+                <path d="m5 9 11 9 11-9"></path>
+            </svg>
+        </a>
+    </nav>
+
+    <!-- Three.js r128 (global build) + matching OrbitControls -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
